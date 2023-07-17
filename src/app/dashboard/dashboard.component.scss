@@ -1,0 +1,23 @@
+.example-container {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .example-sidenav-content {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 100px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  main{
+    min-height: calc(100vh - 64px);
+     
+  }
