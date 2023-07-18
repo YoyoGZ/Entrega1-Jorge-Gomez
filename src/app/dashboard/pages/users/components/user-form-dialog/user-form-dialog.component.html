@@ -1,38 +1,51 @@
 
 <h1 mat-dialog-title>Generar nuevo Usuario</h1>
+<br>
 <div mat-dialog-content>
-    <form formGroup = "userForm" class="grid">
-        <div class="field col-3">
-        <mat-form-field class="w-full" appearance="fill">
+    <form [formGroup] = 'userForm' class="grid">
+        <div class="field col-6">
+            <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Nombre</mat-label>
-                <input FormControlName = "name" matInput type="text" name="name" />
+                <input formControlName = "name" matInput type="text" name="name"/>
+                <mat-error *ngIf="nameControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
             </mat-form-field> 
         </div>
         
-        <div class="field col-3">
+        <div class="field col-6">
             <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Apellido</mat-label>
-                <input FormControlName ="surname" matInput type="text" name="surname" />
+                <input formControlName ="surname" matInput type="text" name="surname"/>
+                <mat-error *ngIf="surnameControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
             </mat-form-field>
         </div>
 
-        <div class="field col-3">
+        <div class="field col-4">
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
-                <input FormControlName ="email" matInput type="email" name="email" />
+                <input formControlName ="email" matInput type="email" name="email"/>
+                <mat-error *ngIf="emailControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
             </mat-form-field>
         </div>    
         
-        <div class="field col-3">
+        <div class="field col-4">
             <mat-form-field appearance="fill">
                 <mat-label>Contraseña</mat-label>
-                <input FormControlName ="password" matInput type="password" name="password" />
+                <input formControlName ="password" matInput type="password" name="password"/>
+                <mat-error *ngIf="passwordControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
             </mat-form-field>
         </div>
     </form>
 </div>
  <div class="flex justify-content-end" mat-dialog-actions>
-    <button mat-button>Cancelar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
     <button (click)="onSubmit()" type="submit" mat-button>Generar</button>
 
 </div>

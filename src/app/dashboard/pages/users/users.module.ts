@@ -2,28 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { UserFormDialogComponent } from './components/user-form-dialog/user-form-dialog.component';
-import { MatButtonModule } from '@angular/material/button';
+import { UserTableComponent } from './components/user-table/user-table.component';
 
 
 
 @NgModule({
   declarations: [
     UsersComponent,
-    UserFormDialogComponent
+    UserFormDialogComponent,
+    UserTableComponent
   ],
   imports: [
     CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-    
+    SharedModule
   ],
   exports: [
     UsersComponent,
-    SharedModule
   ]
   
 })

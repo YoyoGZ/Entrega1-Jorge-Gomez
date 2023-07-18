@@ -1,3 +1,5 @@
-<button (click)="OnCreateUser()" mat-raised-button color="warn" type="button">
+<button class="mb-5" (click)="OnCreateUser()" mat-raised-button color="warn" type="button">
   Generar Usuario
 </button>
+
+<app-user-table [dataSource]="users"></app-user-table>

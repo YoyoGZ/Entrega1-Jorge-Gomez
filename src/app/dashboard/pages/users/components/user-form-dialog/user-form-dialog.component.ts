@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-form-dialog',
@@ -8,10 +9,18 @@ import { FormGroup, FormControl, Validators, } from '@angular/forms';
 })
 export class UserFormDialogComponent {
 
-  nameControl = new FormControl( null,[Validators.required, Validators.minLength(2)] );
-  surnameControl = new FormControl();
-  emailControl = new FormControl();
-  passwordControl = new FormControl();
+  nameControl = new FormControl( null,[
+    Validators.required, 
+    Validators.minLength(3)] );
+  surnameControl = new FormControl(null,[
+    Validators.required, 
+    Validators.minLength(3)] );
+  emailControl = new FormControl(null,[
+    Validators.required, 
+    Validators.minLength(3)] );
+  passwordControl = new FormControl(null,[
+    Validators.required, 
+    Validators.minLength(3)] );
 
   userForm = new FormGroup({
     name: this.nameControl,
@@ -20,4 +29,16 @@ export class UserFormDialogComponent {
     password: this.passwordControl
   });
 
+  constructor(private dialogRef: MatDialogRef<UserFormDialogComponent>) {}
+
+  onSubmit(): void {
+    if( this.userForm.invalid) {
+      this.userForm.markAllAsTouched
+    } else {this.dialogRef.close(this.userForm.value)
+    this.dialogRef.afterClosed().subscribe({
+      next: (v) => {
+        console.log('Valor Recibido', v); 
+      }
+    })
+  }}
 }
