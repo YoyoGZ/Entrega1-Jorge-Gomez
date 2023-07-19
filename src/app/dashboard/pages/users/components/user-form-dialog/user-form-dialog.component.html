@@ -7,8 +7,8 @@
             <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Nombre</mat-label>
                 <input formControlName = "name" matInput type="text" name="name"/>
-                <mat-error *ngIf="nameControl.hasError('required')">
-                    Este campo es requerido
+                <mat-error *ngFor="let error of nameControl.errors | keyvalue">
+                    {{error | messageError }}
                 </mat-error>
             </mat-form-field> 
         </div>
@@ -38,7 +38,7 @@
                 <mat-label>Contraseña</mat-label>
                 <input formControlName ="password" matInput type="password" name="password"/>
                 <mat-error *ngIf="passwordControl.hasError('required')">
-                    Este campo es requerido
+                    Campo requerido
                 </mat-error>
             </mat-form-field>
         </div>

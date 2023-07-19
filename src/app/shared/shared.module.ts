@@ -8,11 +8,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { FullNamePipe } from './pipes/full-name.pipe';
+import { MessageErrorPipe } from './pipes/message-error.pipe';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FullNamePipe,
+    MessageErrorPipe
+  ],
   imports: [
     CommonModule
   ],
@@ -24,7 +29,9 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    FullNamePipe,
+    MessageErrorPipe,
   ]
 })
 export class SharedModule { }

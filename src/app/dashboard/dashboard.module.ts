@@ -20,8 +20,7 @@ import { UsersModule } from './pages/users/users.module';
     MatToolbarModule,
     MatIconModule,
     HomeModule,
-    UsersModule
-
+    UsersModule,
   ],
   exports: [
     DashboardComponent
