@@ -7,8 +7,11 @@ import { User } from '../../models';
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent {
-  displayedColumns: string[] = ['id', 'fullName', 'email'];
+  displayedColumns: string[] = ['id', 'fullName', 'email', 'actions'];
 
   @Input()
   dataSource: User[] = [];
+
+  @Output()
+  deleteUser = new EventEmitter<User>();
 }

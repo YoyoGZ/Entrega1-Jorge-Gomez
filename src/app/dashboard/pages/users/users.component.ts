@@ -60,3 +60,10 @@ OnCreateUser(): void {
    })
  }
 }
+
+onDeleteUser(userToDelete: User ): void {
+  if (confirm(`¿Está seguro de eliminar a ${userToDelete.name}?`)) {
+    this.users = this.users.filter((u) => u.id !== userToDelete.id);
+  console.log(userToDelete);
+  
+}

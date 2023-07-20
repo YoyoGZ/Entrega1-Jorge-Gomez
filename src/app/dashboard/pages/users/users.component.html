@@ -2,4 +2,4 @@
   Generar Usuario
 </button>
 
-<app-user-table [dataSource]="users"></app-user-table>
+<app-user-table [dataSource]="users" (deleteUser)="onDeleteUser($event)"></app-user-table>
