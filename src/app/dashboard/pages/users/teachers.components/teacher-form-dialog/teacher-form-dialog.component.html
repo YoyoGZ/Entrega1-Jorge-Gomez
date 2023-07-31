@@ -1,11 +1,10 @@
-
 <h1 mat-dialog-title > 
-    {{ editingUser 
-        ? 'Editando Datos de  ' + editingUser.name + " " + editingUser.surname 
-        : 'Generar Usuario'}} </h1>
+    {{ editingTeacher 
+        ? 'Editando Datos de  ' + editingTeacher.name + " " + editingTeacher.surname 
+        : 'Generar nuevo Profesor/a'}} </h1>
 <br>
 <div mat-dialog-content>
-    <form [formGroup] = 'userForm' class="grid">
+    <form [formGroup] = 'teacherForm' class="grid">
         <div class="field col-6">
             <mat-form-field class="w-full" appearance="fill">
                 <mat-label>Nombre</mat-label>
@@ -21,6 +20,35 @@
                 <mat-label>Apellido</mat-label>
                 <input formControlName = "surname" matInput type="text" name="surname"/>
                 <mat-error *ngIf="surnameControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="field col-6">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Pais</mat-label>
+                <input formControlName = "nation" matInput type="text" name="nation"/>
+                <mat-error *ngIf="nationControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="field col-6">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input formControlName = "birthday" matInput type="text" name="birthday"/>
+                <mat-error *ngIf="birthdayControl.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="field col-6">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Sexo</mat-label>
+                <input formControlName = "sex" matInput type="text" name="sex"/>
+                <mat-error *ngIf="sexControl.hasError('required')">
                     Este campo es requerido
                 </mat-error>
             </mat-form-field>

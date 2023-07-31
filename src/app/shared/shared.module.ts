@@ -10,6 +10,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { MessageErrorPipe } from './pipes/message-error.pipe';
+import { NgFor } from '@angular/common';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 
@@ -32,6 +34,8 @@ import { MessageErrorPipe } from './pipes/message-error.pipe';
     MatTableModule,
     FullNamePipe,
     MessageErrorPipe,
+    NgFor,
+    MatAutocompleteModule,
   ]
 })
 export class SharedModule { }

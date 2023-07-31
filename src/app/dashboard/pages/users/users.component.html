@@ -1,5 +1,8 @@
 <button class="mb-5" (click)="OnCreateUser()" mat-raised-button color="warn" type="button">
-  Generar Usuario
+  Generar nuevo Usuario
 </button>
 
-<app-user-table [dataSource]="users" (deleteUser)="onDeleteUser($event)"></app-user-table>
+<app-user-table
+  [dataSource]="users" 
+  (deleteUser)="onDeleteUser($event)"
+  (editUser)="onEditUser($event)"></app-user-table>

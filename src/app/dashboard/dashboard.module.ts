@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeModule } from './pages/home/home.module';
 import { UsersModule } from './pages/users/users.module';
+import { RouterModule } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
+import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
+import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    NavMenuComponent,
+    ToolbarComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +25,9 @@ import { UsersModule } from './pages/users/users.module';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    RouterModule,
     HomeModule,
+    MatListModule,
     UsersModule,
   ],
   exports: [

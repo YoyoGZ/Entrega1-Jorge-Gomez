@@ -2,30 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserFormDialogComponent } from './components/user-form-dialog/user-form-dialog.component';
 import { User } from './models';
-
-const ELEMENT_DATA: User[] = [
-  {
-    id: 1,
-    name: 'Kevin',
-    surname: 'De Bruyne',
-    email: 'kevin@email',
-    password: '123456'
-  },
-  {
-    id: 2,
-    name: 'Julian',
-    surname: 'Alvarez',
-    email: 'donjuly@email.com',
-    password: '123456'
-  },
-  {
-    id: 3,
-    name: 'Ilkay',
-    surname: 'Gundogan',
-    email: 'gundo@email.com',
-    password: '123456'
-  }
-];
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-users',
@@ -33,14 +10,20 @@ const ELEMENT_DATA: User[] = [
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
-  public users: User[] = ELEMENT_DATA;
+  public users: User[] = [];
 
   constructor(
-    private matDialog: MatDialog
-  ) {}
+    private matDialog: MatDialog,
+    private userService: UserService,
+  ) {
+    this.users = this.userService.getUsers();
+  }
 
 OnCreateUser(): void {
-   this.matDialog.open(UserFormDialogComponent).afterClosed().subscribe({
+   this.matDialog
+   .open(UserFormDialogComponent)
+   .afterClosed()
+   .subscribe({
     next: (v) => { 
       if(v) {
         this.users =[
@@ -52,18 +35,33 @@ OnCreateUser(): void {
           email: v.email,
           password: v.password
         }]
-        console.log('Datos recibidos', v);
-      } else {
-        console.log('Se CANCELO la Carga');
       }
     }
    })
  }
-}
-
-onDeleteUser(userToDelete: User ): void {
-  if (confirm(`¿Está seguro de eliminar a ${userToDelete.name}?`)) {
+ 
+ onDeleteUser(userToDelete: User ): void {
+  if (confirm(`¿Está seguro de eliminar a ${userToDelete.name} ${userToDelete.surname}?`)) {
     this.users = this.users.filter((u) => u.id !== userToDelete.id);
   console.log(userToDelete);
   
+}}
+
+onEditUser(userToEdit: User): void {
+  this.matDialog
+  .open(UserFormDialogComponent, {
+    data: userToEdit
+  })
+  .afterClosed()
+  .subscribe({
+    next: (userUpdated) => {
+      console.log(userUpdated);
+      if (userUpdated) {
+        this.users = this.users.map((user) => {
+          return user.id === userToEdit.id ? {...user, ...userUpdated} : user
+        })
+      }
+    },    
+  });
+}
 }
