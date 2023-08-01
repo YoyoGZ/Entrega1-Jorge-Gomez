@@ -1,5 +1,13 @@
-<mat-nav-list>
-    <a routerLink="home" mat-list-item>Inicio</a>
-    <a routerLink="users" mat-list-item>Usuarios</a>
-    <a (click)="logout()" mat-list-item>Finalizar Sesion</a>  
-  </mat-nav-list>
+<main class="menu">
+  <mat-nav-list class="item-nav">
+      <a mat-list-item>Inicio</a>
+      <br>
+      <a routerLink="users" mat-list-item>Usuarios</a>
+      <br>
+      <a routerLink="students" mat-list-item>Estudiantes</a>
+      <br>
+      <a routerLink="teachers" mat-list-item>Profesores</a>
+      <br>
+      <a (click)="logout()" mat-list-item>Finalizar Sesion</a>  
+    </mat-nav-list>
+</main>

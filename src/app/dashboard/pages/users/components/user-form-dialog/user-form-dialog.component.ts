@@ -9,7 +9,6 @@ import { User } from '../../models';
   styleUrls: ['./user-form-dialog.component.scss']
 })
 
-
 export class UserFormDialogComponent {
   editingUser?: User;
 

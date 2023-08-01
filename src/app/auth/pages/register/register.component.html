@@ -1,4 +1,4 @@
-<!-- <h1>Ingreso al Sistema</h1>
+<h1>Ingreso al Sistema</h1>
 <p class=" flex justify-content-end"> Complete los campos con la información requerida</p>
 <br/>
 <div [formGroup] = "userRegisterForm" class="grid card">
@@ -8,24 +8,28 @@
           <input formControlName ="surname" matInput placeholder="Apellido">
         </mat-form-field>
       </p>
+
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Nombres</mat-label>
           <input formControlName ="name" matInput placeholder="Nombres">
         </mat-form-field>
       </p>
+
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input formControlName ="email" matInput placeholder="Email">
         </mat-form-field>
       </p>
+
       <p>
         <mat-form-field appearance="outline">
           <mat-label>País</mat-label>
           <input formControlName ="nation" matInput placeholder="País">
         </mat-form-field>
       </p>
+
       <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Tipo de Usuario</mat-label>
@@ -46,4 +50,4 @@
     <div class="col-12 flex justify-content-end">
         <button (click)="addUserTypeArray()" routerLink = "/dashboard"  mat-flat-button color="accent">Registrarse</button>
     </div>
-</div> -->
+</div>

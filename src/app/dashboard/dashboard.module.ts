@@ -5,7 +5,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { HomeComponent } from './pages/home/home.component';
 import { HomeModule } from './pages/home/home.module';
 import { UsersModule } from './pages/users/users.module';
 import { RouterModule } from '@angular/router';
@@ -17,7 +16,7 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
   declarations: [
     DashboardComponent,
     NavMenuComponent,
-    ToolbarComponent
+    ToolbarComponent,
   ],
   imports: [
     CommonModule,
