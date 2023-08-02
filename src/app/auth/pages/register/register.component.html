@@ -1,7 +1,7 @@
 <h1>Ingreso al Sistema</h1>
 <p class=" flex justify-content-end"> Complete los campos con la información requerida</p>
 <br/>
-<div [formGroup] = "userRegisterForm" class="grid card">
+<div [formGroup] = "RegisterModel" class="grid card">
     <p>
         <mat-form-field appearance="outline">
           <mat-label>Apellido</mat-label>
@@ -33,21 +33,21 @@
       <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Tipo de Usuario</mat-label>
-          <input formControlName ="userTypeControl.controls.userType"
+          <input formControlName ="userTypeControl"
                  type="text"
-                 placeholder="Pick one"
-                 aria-label="Usuario"
+                 placeholder="Elija una Opción"
+                 aria-label="Tipo de Usuario"
                  matInput
-                 [formGroup]="userRegisterForm"
+                 [formGroup]="userType"
                  [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let userTypeControl of userTypeArray.controls">
-              {{option}}
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let userTypeControl of userTypeFormGroup">
+              {{'Alumno'}} {{'Profesor'}} {{'Empleado'}}
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
       </form>
     <div class="col-12 flex justify-content-end">
-        <button (click)="addUserTypeArray()" routerLink = "/dashboard"  mat-flat-button color="accent">Registrarse</button>
+        <button routerLink = "/dashboard"  mat-flat-button color="accent">Registrarse</button>
     </div>
 </div>
