@@ -30,24 +30,14 @@
         </mat-form-field>
       </p>
 
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
+      <p>
+        <mat-form-field appearance="outline">
           <mat-label>Tipo de Usuario</mat-label>
-          <input formControlName ="userTypeControl"
-                 type="text"
-                 placeholder="Elija una Opción"
-                 aria-label="Tipo de Usuario"
-                 matInput
-                 [formGroup]="userType"
-                 [matAutocomplete]="auto">
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let userTypeControl of userTypeFormGroup">
-              {{'Alumno'}} {{'Profesor'}} {{'Empleado'}}
-            </mat-option>
-          </mat-autocomplete>
+          <input class="w-full" formControlName ="userType" matInput placeholder="Alumno/Profesor/Tbj Interno">
         </mat-form-field>
-      </form>
+      </p>
+      
     <div class="col-12 flex justify-content-end">
-        <button routerLink = "/dashboard"  mat-flat-button color="accent">Registrarse</button>
+        <button routerLink = "/dashboard/home"  mat-flat-button color="accent">Registrarse</button>
     </div>
 </div>

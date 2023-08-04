@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder,FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
-
-interface userTypeFormGroup{
-userType: ['Alumno', 'Profesor', 'Empleado'];
-}
+import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
 
 interface RegisterModel{
   name: FormControl<string | null>;
@@ -36,11 +32,9 @@ export class RegisterComponent {
   nationControl = new FormControl < string | null >(null,[
     Validators.required, 
     Validators.minLength(3)] );
-  alumnoControl = new FormControl < string | null >(null,);
-  profesorControl = new FormControl < string | null >(null,);
-  empleadoControl = new FormControl < string | null >(null,);
   userTypeControl = new FormControl < string | null >(null,[
-    Validators.required,] );
+    Validators.required,
+    Validators.minLength(3)] );
 
     
   RegisterModel : FormGroup  = new FormGroup({
@@ -54,10 +48,4 @@ export class RegisterComponent {
     userType: this.userTypeControl,
   });
 
-  
- constructor(private formBuilder: FormBuilder) {
-      this.userTypeFormGroup = this.formBuilder.group({
-        userType: ['Alumno'],
-    })
-  }
 }

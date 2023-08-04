@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
   ],
   imports: [
     CommonModule,
+    DashboardRoutingModule,
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,
@@ -31,6 +33,6 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
   ],
   exports: [
     DashboardComponent
-  ]
+  ],
 })
 export class DashboardModule { }
