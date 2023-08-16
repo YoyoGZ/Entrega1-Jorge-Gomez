@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
 import { TeacherModule } from './dashboard/pages/users/teachers/teachers.module';
 import { StudentsModule } from './dashboard/pages/users/students/students.module';
+import { CoursesModule } from './dashboard/pages/courses/courses.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { StudentsModule } from './dashboard/pages/users/students/students.module
     BrowserAnimationsModule,
     DashboardModule,
     AuthModule,
+    CoursesModule,
     TeacherModule,
     StudentsModule,
   ],

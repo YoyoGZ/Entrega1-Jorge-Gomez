@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Teacher } from '../../models';
+import { Teacher } from '../models';
 @Component({
   selector: 'app-teacher-table',
   templateUrl: './teacher-table.component.html',

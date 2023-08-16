@@ -1,9 +1,9 @@
 <button class="mb-5" (click)="OnCreateTeacher()" mat-raised-button color="warn" type="button">
-    Generar nuevo Profesor/a
-  </button>
-  
-  <app-teacher-table
-    [dataSource]="teachers"
-    (deleteTeacher)="onDeleteTeacher($event)"
-    (editTeacher)="onEditTeacher($event)">
-  </app-teacher-table>
+  Generar nuevo Profesor/a
+</button>
+
+<app-teacher-table
+  [dataSource]="(teachers | async) || []"
+  (deleteTeacher)="onDeleteTeacher($event)"
+  (editTeacher)="onEditTeacher($event)">
+</app-teacher-table>

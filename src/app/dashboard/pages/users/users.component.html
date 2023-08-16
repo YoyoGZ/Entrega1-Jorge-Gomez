@@ -5,6 +5,7 @@
 <router-outlet></router-outlet>
 
 <app-user-table
-  [dataSource]="users" 
+  [dataSource]="(users | async) || []"
   (deleteUser)="onDeleteUser($event)"
-  (editUser)="onEditUser($event)"></app-user-table>
+  (editUser)="onEditUser($event)">
+</app-user-table>

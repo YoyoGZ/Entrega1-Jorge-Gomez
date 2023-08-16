@@ -1,0 +1,46 @@
+<h1> Listado de Cursos </h1>
+
+<button mat-flat-button color="primary" type="button">
+    <mat-icon>add</mat-icon>
+    Generar Nuevo Curso
+</button>
+
+<table mat-table 
+  [dataSource]="courses" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID. </th>
+      <td mat-cell *matCellDef="let courses"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let courses"> </td>
+    </ng-container>
+       
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let courses"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+        <td mat-cell *matCellDef="let courses"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Fecha Finalizacion </th>
+        <td mat-cell *matCellDef="let courses"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let courses">
+        <!-- <button [routerLink] = "course.id" mat-icon-button color="primary">
+          <mat-icon>visibility</mat-icon>
+        </button> -->
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

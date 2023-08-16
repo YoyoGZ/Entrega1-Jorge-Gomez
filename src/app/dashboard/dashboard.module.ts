@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { UserRoutingModule } from './pages/users/user-routing.modules';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    UserRoutingModule,
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,

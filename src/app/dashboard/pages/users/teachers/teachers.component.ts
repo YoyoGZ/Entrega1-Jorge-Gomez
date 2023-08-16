@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TeacherFormDialogComponent } from '../teachers.components/teacher-form-dialog/teacher-form-dialog.component';
-import { Teacher } from '../models';
-import { TeacherService } from '../teacher.service';
+import { TeacherFormDialogComponent } from './teachers.components/teacher-form-dialog/teacher-form-dialog.component';
+import { Teacher } from './teachers.components/models';
+import { TeacherService } from './teacher.service';
+import { NotifierService } from 'src/app/core/services/notifier.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-teachers',
@@ -10,61 +13,59 @@ import { TeacherService } from '../teacher.service';
   styleUrls: ['./teachers.component.scss']
 })
 export class TeachersComponent {
-  public teachers: Teacher[] = [];
+  public teachers:Observable<Teacher[]>;
 
   constructor(
     private matDialog: MatDialog,
     private teacherService: TeacherService,
+    private notifier: NotifierService
   ) {
-    this.teachers = this.teacherService.getTeacher();
+    this.teacherService.loadTeachers();
+    this.teachers = this.teacherService.getTeachers();
   }
 
-OnCreateTeacher(): void {
-   this.matDialog
-   .open(TeacherFormDialogComponent)
-   .afterClosed()
-   .subscribe({
-    next: (v) => { 
-      if(v) {
-        this.teachers =[
-          ...this.teachers,
-          {
-          id: this.teachers.length + 1,
-          name: v.name,
-          surname: v.surname,
-          nation: v.nation,
-          birthday: v.birthday,
-          sex: v.sex,
-          email: v.email,
-          password: v.password
-        }]
+
+  OnCreateTeacher(): void {
+    this.matDialog
+    .open(TeacherFormDialogComponent)
+    .afterClosed()
+    .subscribe({
+      next: (v) => { 
+        if(v) {
+          this.notifier.showSuccess(' Se ha generado el nuevo Profesor/a')
+          this.teacherService.createTeacher({
+            name: v.name,
+            surname: v.surname,
+            nation: v.nation,
+            birthday: v.birthday,
+            sex: v.sex,
+            email: v.email,
+            password: v.password
+          })   
+          }
+        }
       }
+    )
     }
-   })
- }
  
- onDeleteTeacher(teacherToDelete: Teacher ): void {
-  if (confirm(`¿Está seguro de eliminar a ${teacherToDelete.name} ${teacherToDelete.surname}?`)) {
-    this.teachers = this.teachers.filter((Teacher) => Teacher.id !== teacherToDelete.id);
-  console.log(teacherToDelete);
-  
-}}
+  onDeleteTeacher(teacherToDelete: Teacher): void {
+     if (confirm(`¿Está seguro de eliminar a ${teacherToDelete.name} ${teacherToDelete.surname}?`)) {
+     this.teacherService.deleteTeacherById(teacherToDelete.id);
+     this.notifier.showSuccess('Profesor/a Eliminado')     
+    }
+  }
 
-onEditTeacher(teacherToEdit: Teacher): void {
-  this.matDialog
-  .open(TeacherFormDialogComponent, {
-    data: teacherToEdit
-  })
-  .afterClosed()
-  .subscribe({
-    next: (teacherUpdated) => {
-      if (teacherUpdated) {
-        this.teachers = this.teachers.map((teacher) => {
-          return teacher.id === teacherToEdit.id ? {...teacher, ...teacherUpdated} : teacher
-        })
-      }
-    },    
-  });
-}
-
+  onEditTeacher(teacherToEdit: Teacher): void {
+    this.matDialog
+      .open(TeacherFormDialogComponent, { data: teacherToEdit })
+      .afterClosed()
+      .subscribe({
+        next: (teacherUpdated) => {
+          if (teacherUpdated) {
+            this.teacherService.updateTeacherById(teacherToEdit.id, teacherUpdated);
+            this.notifier.showSuccess(' Información de Profesor/a  Editada')
+          }
+        },
+      });    
+  }
 }

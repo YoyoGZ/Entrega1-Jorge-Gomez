@@ -1,37 +1,37 @@
 <h1>Ingreso al Sistema</h1>
-<p class=" flex justify-content-end"> Complete los campos con la información requerida</p>
+<p class="flex justify-content-center"> Complete los campos con la información requerida</p>
 <br/>
-<div [formGroup] = "RegisterModel" class="grid card">
+<div [formGroup] = "RegisterModel" class="grid card col-50">
     <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="grid col-12" appearance="outline">
           <mat-label>Apellido</mat-label>
           <input formControlName ="surname" matInput placeholder="Apellido">
         </mat-form-field>
       </p>
 
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="grid col-12" appearance="outline">
           <mat-label>Nombres</mat-label>
           <input formControlName ="name" matInput placeholder="Nombres">
         </mat-form-field>
       </p>
 
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field  class="grid col-12" appearance="outline">
           <mat-label>Email</mat-label>
           <input formControlName ="email" matInput placeholder="Email">
         </mat-form-field>
       </p>
 
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="grid col-12" appearance="outline">
           <mat-label>País</mat-label>
           <input formControlName ="nation" matInput placeholder="País">
         </mat-form-field>
       </p>
 
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="grid col-12" appearance="outline">
           <mat-label>Tipo de Usuario</mat-label>
           <input class="w-full" formControlName ="userType" matInput placeholder="Alumno/Profesor/Tbj Interno">
         </mat-form-field>

@@ -7,9 +7,10 @@ import { RegisterComponent } from './pages/register/register.component';
     imports: [
         RouterModule.forChild([
                     {   path: 'login',component: LoginComponent},                        
-                    {   path: 'register',component: RegisterComponent}
-                ])]
-                    // {   path: '**', redirectTo: '/auth'},
+                    {   path: 'register',component: RegisterComponent},
+                    {   path: '**', redirectTo: '/auth'},
+                ])                    
+    ]
 })
 
 export class AuthRoutingModule {}

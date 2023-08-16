@@ -1,9 +1,11 @@
+<h1> ESTUDIANTES </h1>
+
 <button class="mb-5" (click)="OnCreateStudent()" mat-raised-button color="warn" type="button">
-    Generar nuevo Estudiante
-  </button>
-  
-  <app-student-table
-    [dataSource]="students"
-    (deleteStudent)="onDeleteStudent($event)"
-    (editStudent)="onEditStudent($event)">
-  </app-student-table>
+  Generar nuevo Estudiante
+</button>
+
+<app-student-table
+  [dataSource]="(students | async) || []"
+  (deleteStudent)="onDeleteStudent($event)"
+  (editStudent)="onEditStudent($event)">
+</app-student-table>
