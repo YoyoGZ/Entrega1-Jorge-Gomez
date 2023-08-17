@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { TeacherModule } from './dashboard/pages/users/teachers/teachers.module';
 import { StudentsModule } from './dashboard/pages/users/students/students.module';
 import { CoursesModule } from './dashboard/pages/courses/courses.module';
+import { UsersModule } from './dashboard/pages/users/users.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CoursesModule } from './dashboard/pages/courses/courses.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
+    UsersModule,
     AuthModule,
     CoursesModule,
     TeacherModule,
