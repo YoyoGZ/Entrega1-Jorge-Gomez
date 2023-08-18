@@ -12,7 +12,6 @@ import { CoursesComponent } from './pages/courses/courses.component';
                     { path: 'courses', component: CoursesComponent},
                     { path: 'users', component: UsersComponent},            
                     { path: ':id', component: UserDetailComponent },
-                    { path: '**', redirectTo: 'home' },                       
                   ]),
               ],
               exports: [RouterModule]           

@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
                         loadChildren: () => import('./students/students.module').then((m) => m.StudentsModule),},                       
                     { path: 'teachers',
                         loadChildren: () => import('./teachers/teachers.module').then((m) => m.TeacherModule),},
-                    { path: '**', redirectTo: 'home' },                       
                   ]),
               ],
               exports: [RouterModule]           

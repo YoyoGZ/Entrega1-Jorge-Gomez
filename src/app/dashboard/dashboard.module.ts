@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeModule } from './pages/home/home.module';
-import { UsersModule } from './pages/users/users.module';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
@@ -31,7 +30,6 @@ import { UserRoutingModule } from './pages/users/user-routing.modules';
     RouterModule,
     HomeModule,
     MatListModule,
-    UsersModule
   ],
   exports: [
     DashboardComponent
