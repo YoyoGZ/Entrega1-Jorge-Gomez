@@ -5,6 +5,7 @@ import { StudentFormDialogComponent } from './Students.components/student-form-d
 import { StudentTableComponent } from './Students.components/student-table/student-table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StudentService } from './student.service';
+import { StudentsRoutingModule } from './students-routing.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { StudentService } from './student.service';
 
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    StudentsRoutingModule,
   ],
   exports: [
     StudentsComponent,

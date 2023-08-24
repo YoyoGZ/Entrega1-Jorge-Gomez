@@ -8,7 +8,7 @@ import { CoursesComponent } from './pages/courses/courses.component';
 @NgModule({
     imports: [
               RouterModule.forChild([
-                    { path: 'home', component: HomeComponent },
+                    { path: '', component: HomeComponent },
                     { path: 'courses', component: CoursesComponent},
                     { path: 'users', component: UsersComponent},            
                     { path: ':id', component: UserDetailComponent },

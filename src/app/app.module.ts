@@ -18,7 +18,6 @@ import { CoursesModule } from './dashboard/pages/courses/courses.module';
     BrowserAnimationsModule,
     CoursesModule,
     TeacherModule,
-    StudentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
