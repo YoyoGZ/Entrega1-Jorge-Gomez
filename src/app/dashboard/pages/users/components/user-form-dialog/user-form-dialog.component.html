@@ -1,8 +1,7 @@
-
-<h1 mat-dialog-title > 
+<h1 mat-dialog-title >
     {{ editingUser 
         ? 'Editando Datos de  ' + editingUser.name + " " + editingUser.surname 
-        : 'Generar Usuario'}} </h1>
+        :  '+ Generar Nuevo Usuario'}} </h1>
 <br>
 <div mat-dialog-content>
     <form [formGroup] = 'userForm' class="grid">

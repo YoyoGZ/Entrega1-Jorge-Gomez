@@ -11,9 +11,6 @@ interface FirstNotification{
   providedIn: 'root'
 })
 export class NotifierService {
-  showError(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
 
   private notifier$ = new Subject<FirstNotification>
 
@@ -28,6 +25,14 @@ export class NotifierService {
    showSuccess(message: string, title = 'Realizado'): void {
     this.notifier$.next({
       type: 'success',
+      message,
+      title
+    });
+  }
+
+  showError(message: string, title = 'Error'): void {
+    this.notifier$.next({
+      type: 'error',
       message,
       title
     });

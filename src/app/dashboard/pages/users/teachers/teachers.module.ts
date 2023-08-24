@@ -5,6 +5,7 @@ import { TeacherTableComponent } from './teachers.components/teacher-table/teach
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TeacherService } from './teacher.service';
 import { TeachersComponent } from './teachers.component';
+import { TeachersRoutingModule } from './teachers-routing.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TeachersComponent } from './teachers.component';
 
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    TeachersRoutingModule
   ],
   exports: [
     TeachersComponent,

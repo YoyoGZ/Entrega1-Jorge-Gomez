@@ -18,22 +18,22 @@ export class CourseService {
     this.courses$.next([
       {
         id: 1,
-        name: 'Domino',
-        description: 'Domino Game',
+        name: 'Black Jack',
+        description: 'Black Jack Game',
         iniDate:  '02/01/2024',
         finalDate: '15/01/24',
       },
       {
-        id: 1,
+        id: 2,
         name: 'Poker',
         description: 'Poker Game',
         iniDate:  '15/03/2024',
         finalDate: '25/08/24',
       },
       {
-        id: 1,
+        id: 3,
         name: 'Counter Strike',
-        description: 'Domino Game',
+        description: 'Counter Strike Video Game',
         iniDate:  '02/01/2024',
         finalDate: '15/01/24',
       }

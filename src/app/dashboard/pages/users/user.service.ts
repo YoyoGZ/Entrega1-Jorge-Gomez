@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CreateUserId, UpdateUserData, User } from './models';
 import { BehaviorSubject, Observable, Subject, delay, map, of, take } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 const USER_DB: Observable<User[]> = of([
   {
@@ -33,12 +34,18 @@ const USER_DB: Observable<User[]> = of([
 export class UserService {
   private users$ = new BehaviorSubject<User[]>([]);  
 
-  constructor() { }
+  constructor(private hhtpClient: HttpClient) { }
 
   loadUsers(): void{
     USER_DB.subscribe({
       next: (usersFromDb) => this.users$.next(usersFromDb)
     })
+    // this.hhtpClient.get<User[]>('http://localhost:3000/users').subscribe({
+    //   next:(response) => {
+    //     console.log('RESPUESTA', response);
+    //     this.users$.next(response)
+    //   }
+    // })
   };
   
   getUsers() : Subject<User[]> {

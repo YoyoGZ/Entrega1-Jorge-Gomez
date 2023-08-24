@@ -1,0 +1,39 @@
+Listado de cosas para seguir:
+
+continuar el tema de cursos (copiar el de user/ Students?? )
+ver como sigue lo de console log de data (al final del componente)
+
+continuar con User Detail (users/pages)
+
+Ver el tema de http Client 
+
+{
+            "id": "1",
+            "name": "Enzo",
+            "surname": "Perez",
+            "email": "enzito@email",
+            "password": "123456"
+        },
+        {
+            "id": "2",
+            "name": "Kevin",
+            "surname": "De Bruyne",
+            "email": "kevin@email",
+            "password": "123456"
+        },
+        {
+            "id": "3",
+            "name": "Julian",
+            "surname": "Alvarez",
+            "email": "donjuly@email.com",
+            "password": "123456"
+        },
+        {
+            "id": "4",
+            "name": "Ilkay",
+            "surname": "Gundogan",
+            "email": "gundo@email.com",
+            "password": "123456"
+        }
+
+

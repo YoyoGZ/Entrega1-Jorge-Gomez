@@ -1,12 +1,17 @@
-<mat-toolbar color=primary>
+<mat-toolbar class="align-items-center justify-content-between" color=primary>
+  <div>  
     <button 
-        (click)="drawer?.toggle()" 
-        mat-icon-button 
-        class="example-icon" 
-        aria-label="Example icon-button with menu icon"
-        >
-        <mat-icon>menu</mat-icon>
-   </button>
-   <span>Aplicación</span>
-   <span class="example-spacer"></span>
+          (click)="drawer?.toggle()" 
+          mat-icon-button 
+          class="example-icon" 
+          aria-label="Example icon-button with menu icon"
+          >
+          <mat-icon>menu</mat-icon>
+    </button>
+    <span>Aplicación</span>
+    <span class="example-spacer"></span>
+  </div>
+   <p *ngIf="authUser$ | async ; let authUser">
+      {{ authUser?.name }} {{ authUser?.surname }};
+    </p>
  </mat-toolbar>
