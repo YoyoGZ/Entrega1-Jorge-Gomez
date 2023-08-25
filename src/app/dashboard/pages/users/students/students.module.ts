@@ -6,6 +6,7 @@ import { StudentTableComponent } from './Students.components/student-table/stude
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StudentService } from './student.service';
 import { StudentsRoutingModule } from './students-routing.module';
+import { StudentsRoutingModule } from './students-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { StudentsRoutingModule } from './students-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    StudentsRoutingModule
+    StudentsRoutingModule,
   ],
   exports: [
     StudentsComponent,

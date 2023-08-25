@@ -31,7 +31,6 @@ import { UsersModule } from './pages/users/users.module';
     RouterModule,
     HomeModule,
     MatListModule,
-    UsersModule,
   ],
   exports: [
     DashboardComponent

@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeacherModule } from './dashboard/pages/users/teachers/teachers.module';
 import { StudentsModule } from './dashboard/pages/users/students/students.module';
 import { CoursesModule } from './dashboard/pages/courses/courses.module';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
     CoursesModule,
     TeacherModule,
     StudentsModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
